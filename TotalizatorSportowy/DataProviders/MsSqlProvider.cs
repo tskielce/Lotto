@@ -6,11 +6,11 @@ namespace DataProviders
 {
     public class MsSqlProvider
     {
-        public void InsertDataFromCollection(List<DataSchema> list, Settings settings)
+        public void InsertDataFromCollection(List<DataSchema> list, IConnectionStringProvider settings)
         {
             Query queries = new Query();
-
-            using (SqlConnection connection = new SqlConnection(settings.connectionString))
+            
+            using (SqlConnection connection = new SqlConnection(settings.ConnectionString))
             {
                 connection.Open();
 
@@ -31,5 +31,4 @@ namespace DataProviders
             }
         }
     }
-
 }

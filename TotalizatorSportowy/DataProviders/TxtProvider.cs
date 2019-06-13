@@ -6,10 +6,11 @@ using System.Net;
 
 namespace DataProviders
 {
+
     public class TxtProvider
     {
-        Settings _settings;
-        public TxtProvider(Settings settings)
+        IPathsProvider _settings;
+        public TxtProvider(IPathsProvider settings)
         {
             _settings = settings;
         }
@@ -21,23 +22,23 @@ namespace DataProviders
 
             using (WebClient webClient = new WebClient())
             {
-                webClient.DownloadFile(_settings.url, _settings.pathFile);
+                webClient.DownloadFile(_settings.Url, _settings.PathFile);
             }
         }
 
         private void DeleteExistingFile()
         {
-            if (string.IsNullOrEmpty(_settings.pathFile))
+            if (string.IsNullOrEmpty(_settings.PathFile))
             {
-                File.Delete(_settings.pathFile);
+                File.Delete(_settings.PathFile);
             }
         }
 
         private void CreateOrAddFolder()
         {
-            if (!Directory.Exists(_settings.path))
+            if (!Directory.Exists(_settings.Path))
             {
-                Directory.CreateDirectory(_settings.path);
+                Directory.CreateDirectory(_settings.Path);
             }
         }
 
@@ -45,7 +46,7 @@ namespace DataProviders
         {
             DownloadFile();
 
-            using (StreamReader streamReader = new StreamReader(_settings.pathFile))
+            using (StreamReader streamReader = new StreamReader(_settings.PathFile))
             {
                 return streamReader.ReadToEnd();
             }
