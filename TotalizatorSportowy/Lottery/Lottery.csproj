@@ -11,7 +11,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataProviders\DataProviders.csproj" />
-    <ProjectReference Include="..\Data\Data.csproj" />
   </ItemGroup>
 
 </Project>

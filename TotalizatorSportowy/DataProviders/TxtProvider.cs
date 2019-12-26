@@ -1,4 +1,5 @@
 ﻿using Data;
+using DataProviders.Provider;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,10 +10,10 @@ namespace DataProviders
 
     public class TxtProvider
     {
-        IPathsProvider _settings;
-        public TxtProvider(IPathsProvider settings)
+        IPathProvider _pathSettings;
+        public TxtProvider(IPathProvider PathsSettings)
         {
-            _settings = settings;
+            _pathSettings = PathsSettings;
         }
 
         public void DownloadFile()
@@ -22,23 +23,23 @@ namespace DataProviders
 
             using (WebClient webClient = new WebClient())
             {
-                webClient.DownloadFile(_settings.Url, _settings.PathFile);
+                webClient.DownloadFile(_pathSettings.Url, _pathSettings.PathFile);
             }
         }
 
         private void DeleteExistingFile()
         {
-            if (string.IsNullOrEmpty(_settings.PathFile))
+            if (string.IsNullOrEmpty(_pathSettings.PathFile))
             {
-                File.Delete(_settings.PathFile);
+                File.Delete(_pathSettings.PathFile);
             }
         }
 
         private void CreateOrAddFolder()
         {
-            if (!Directory.Exists(_settings.Path))
+            if (!Directory.Exists(_pathSettings.Path))
             {
-                Directory.CreateDirectory(_settings.Path);
+                Directory.CreateDirectory(_pathSettings.Path);
             }
         }
 
@@ -46,7 +47,7 @@ namespace DataProviders
         {
             DownloadFile();
 
-            using (StreamReader streamReader = new StreamReader(_settings.PathFile))
+            using (StreamReader streamReader = new StreamReader(_pathSettings.PathFile))
             {
                 return streamReader.ReadToEnd();
             }

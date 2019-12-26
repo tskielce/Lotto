@@ -18,7 +18,7 @@ namespace Lottery
 
             try
             {
-                msSqlProvider.InsertDataFromCollection(listData, settings);
+                msSqlProvider.InsertDataFromCollection(listData, settings, settings);
 
                 Console.WriteLine("\nDownload data  - Duzy Lotek - success\n");
             }
@@ -48,15 +48,18 @@ namespace Lottery
                         appSettings.Get("path"),
                         appSettings.Get("url"),
                         appSettings.Get("fileName"),
-                        ConfigurationManager.ConnectionStrings["mssql"].ConnectionString
+                        ConfigurationManager.ConnectionStrings["mssql"].ConnectionString,
+                        appSettings.Get("db"),
+                        appSettings.Get("table"),
+                        appSettings.Get("schema")
                     );
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                Console.WriteLine("");
+                Console.WriteLine(ex.Message);
             }
-            
+
             return settings;
         }
     }

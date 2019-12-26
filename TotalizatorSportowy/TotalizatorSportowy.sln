@@ -7,9 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataProviders", "DataProvid
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DatabaseLotto", "DatabaseLotto\DatabaseLotto.sqlproj", "{DB89255F-6CC0-4777-AF87-74CE20B8C04C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{0EC27F21-FC6B-460B-8AB0-3887219DAAFA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lottery", "Lottery\Lottery.csproj", "{8E42480E-2CD2-44E5-8003-42DC204876C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lottery", "Lottery\Lottery.csproj", "{8E42480E-2CD2-44E5-8003-42DC204876C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,10 +25,6 @@ Global
 		{DB89255F-6CC0-4777-AF87-74CE20B8C04C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB89255F-6CC0-4777-AF87-74CE20B8C04C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DB89255F-6CC0-4777-AF87-74CE20B8C04C}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{0EC27F21-FC6B-460B-8AB0-3887219DAAFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0EC27F21-FC6B-460B-8AB0-3887219DAAFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0EC27F21-FC6B-460B-8AB0-3887219DAAFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0EC27F21-FC6B-460B-8AB0-3887219DAAFA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8E42480E-2CD2-44E5-8003-42DC204876C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8E42480E-2CD2-44E5-8003-42DC204876C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E42480E-2CD2-44E5-8003-42DC204876C4}.Release|Any CPU.ActiveCfg = Release|Any CPU

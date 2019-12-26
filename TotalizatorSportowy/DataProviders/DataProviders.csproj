@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Data\Data.csproj" />
+    <ProjectReference Include="..\DatabaseLotto\DatabaseLotto.sqlproj" />
   </ItemGroup>
 
 </Project>

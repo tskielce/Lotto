@@ -1,10 +1,9 @@
-﻿namespace DataProviders
+﻿namespace DataProviders.Provider
 {
-    public interface IPathsProvider
+    public interface IPathProvider
     {
         string PathFile { get; }
         string Url { get; }
         string Path { get; }
-
     }
 }
