@@ -8,7 +8,7 @@ using System.Net;
 namespace DataProviders
 {
 
-    public class TxtProvider
+    public class TxtProvider : ITxtProvider
     {
         IPathProvider _pathSettings;
         public TxtProvider(IPathProvider PathsSettings)
